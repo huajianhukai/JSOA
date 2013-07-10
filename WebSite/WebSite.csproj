@@ -415,6 +415,7 @@
     <Content Include="Manager\Style\Table0.css" />
     <Content Include="Test\ListPage.ascx" />
     <Content Include="Test\WebForm1.aspx" />
+    <Content Include="Test\WebForm2.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -502,6 +503,13 @@
     </Compile>
     <Compile Include="Test\WebForm1.aspx.designer.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Test\WebForm2.aspx.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test\WebForm2.aspx.designer.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
