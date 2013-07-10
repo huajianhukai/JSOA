@@ -10,6 +10,7 @@
     <form id="form1" runat="server">
     <div>
      this is a test
+     add an other message
     </div>
     </form>
 </body>
