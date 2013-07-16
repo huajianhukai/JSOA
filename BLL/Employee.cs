@@ -27,6 +27,11 @@ namespace JSOA.BLL
             return dal.Exists(No);
         }
 
+        public bool test()
+        {
+            return dal.test();
+        }
+
         /// <summary>
         /// 增加一条数据
         /// </summary>

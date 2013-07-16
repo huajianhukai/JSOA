@@ -33,6 +33,24 @@ namespace JSOA.SQLServerDAL
             return DbHelperSQL.Exists(strSql.ToString(), parameters);
         }
 
+        public bool test()
+        {
+
+  
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append(" set XACT_ABORT  ON ");
+            strSql.Append(" BEGIN TRANSACTION ");
+            strSql.Append("insert into [dbo].[Test] values(1,'反对反对','二恶6');");
+          
+            strSql.Append("insert into [dbo].[Test] values(1,'111','111');");
+          
+            strSql.Append("commit;");
+            
+
+            return DbHelperSQL.Exists(strSql.ToString());
+
+        }
+
 
         /// <summary>
         /// 增加一条数据

@@ -16,6 +16,8 @@ namespace JSOA.IDAL
         /// 是否存在该记录
         /// </summary>
         bool Exists(string No);
+
+        bool test();
         /// <summary>
         /// 增加一条数据
         /// </summary>

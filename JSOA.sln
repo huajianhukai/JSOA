@@ -1,13 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B5800A38-427C-41D4-A273-31FBE2E75973}"
-	ProjectSection(SolutionItems) = preProject
-		JSOA.vsmdi = JSOA.vsmdi
-		Local.testsettings = Local.testsettings
-		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebSite", "WebSite\WebSite.csproj", "{AEAEDA8F-23A8-4157-8232-18E0ED6391F8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{D212D7BB-0778-4565-BD9F-E74137E88F80}"
@@ -24,7 +17,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQLServerDAL", "SQLServerDA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBUtility", "DBUtility\DBUtility.csproj", "{187075B9-1D52-4DF4-AC73-1DB0D2BD079E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject", "TestProject\TestProject.csproj", "{98CC6AD4-8394-4757-9E16-F7FDB7694AE3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OAService", "OAService\OAService.csproj", "{F2276ECD-221C-48E2-8E48-878CFC7A5650}"
 EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
@@ -67,10 +60,10 @@ Global
 		{187075B9-1D52-4DF4-AC73-1DB0D2BD079E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{187075B9-1D52-4DF4-AC73-1DB0D2BD079E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{187075B9-1D52-4DF4-AC73-1DB0D2BD079E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{98CC6AD4-8394-4757-9E16-F7FDB7694AE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{98CC6AD4-8394-4757-9E16-F7FDB7694AE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{98CC6AD4-8394-4757-9E16-F7FDB7694AE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{98CC6AD4-8394-4757-9E16-F7FDB7694AE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2276ECD-221C-48E2-8E48-878CFC7A5650}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2276ECD-221C-48E2-8E48-878CFC7A5650}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2276ECD-221C-48E2-8E48-878CFC7A5650}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2276ECD-221C-48E2-8E48-878CFC7A5650}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
