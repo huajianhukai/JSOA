@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using JSOA.Model;
 using JSOA.BLL;
+using JSOA.Common;
 
 namespace JSOA.WebSite.Manager
 {
@@ -13,35 +14,97 @@ namespace JSOA.WebSite.Manager
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-          
+            if (!Page.IsPostBack)
+            {
+                txtUserName.Text = Utils.GetCookie("RememberName");
+            }
         }
 
-        protected void btnLogin_Click(object sender, EventArgs e)
+        protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            string userName = this.txtName.Text.Trim();
-            string passWord = this.txtPass.Text.Trim();
+            string userNo = txtUserName.Text.Trim();
+            string userPwd = txtUserPwd.Text.Trim();
+            string code = txtCode.Text.Trim();
 
-            Employee emp = new Employee();
+            if (userNo.Equals("") || userPwd.Equals(""))
+            {
+                lblTip.Visible = true;
+                lblTip.Text = "请输入用户名或密码";
+                return;
+            }
+
+            if (code.Equals(""))
+            {
+                lblTip.Visible = true;
+                lblTip.Text = "请输入验证码";
+                return;
+            }
+
+            if (Session[ConstKeys.SESSION_CODE] == null)
+            {
+                lblTip.Visible = true;
+                lblTip.Text = "系统找不到验证码";
+                return;
+            }
+
+            if (code.ToLower() != Session[ConstKeys.SESSION_CODE].ToString().ToLower())
+            {
+                lblTip.Visible = true;
+                lblTip.Text = "验证码输入不正确";
+                return;
+            }
+
+            Employee modelemp = new Employee();
             BllEmployee bllemp=new BllEmployee ();
 
-            emp = bllemp.GetModel(userName);
-            if (emp != null)
+            modelemp = bllemp.GetModel(userNo);
+            if (modelemp != null)
             {
-                if (emp.Pass == JSOA.Common.Encrypt.MD5(passWord, 32))
+                if (modelemp.Pass == JSOA.Common.Encrypt.MD5(userPwd, 32))
                 {
+                    Session[ConstKeys.SESSION_ADMIN_INFO] = modelemp;
+                    Session.Timeout = 45;
+
+                    //登陆日志
+
+
+
+                    //写入Cookies
+                    if (cbRememberId.Checked)
+                    {
+                        Utils.WriteCookie("RememberName", modelemp.No, 14400);
+                    }
+                    else
+                    {
+                        Utils.WriteCookie("RememberName", modelemp.No, -14400);
+                    }
+                    Utils.WriteCookie("AdminName", "jsoa", modelemp.Name);
+                    Utils.WriteCookie("AdminPwd", "jsoa", modelemp.Pass);
                     Response.Redirect("Default.aspx");
+                    return;
+
+
+
                 }
                 else
                 {
-                    Response.Write("<script>alert('密码不正确！');</script>");
+                    lblTip.Visible = true;
+                    lblTip.Text = "密码有误";
+                    return;
                 }
             }
             else
             {
-                Response.Write("<script>alert('用户不存在！');</script>");
+                lblTip.Visible = true;
+                lblTip.Text = "用户名不存在";
+                return;
             }
 
 
         }
+
+       
+
+       
     }
 }
