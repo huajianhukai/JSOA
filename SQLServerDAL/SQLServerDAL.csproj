@@ -41,7 +41,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Employee.cs" />
+    <Compile Include="ListPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sys_Departmentcs.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DBUtility\DBUtility.csproj">

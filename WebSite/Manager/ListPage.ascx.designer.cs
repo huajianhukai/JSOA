@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace JSOA.WebSite.Test {
+namespace JSOA.WebSite.Manager {
     
     
     public partial class ListPage {

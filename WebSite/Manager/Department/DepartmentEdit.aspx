@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Department.aspx.cs" Inherits="JSOA.WebSite.Manager.Department" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DepartmentEdit.aspx.cs" Inherits="JSOA.WebSite.Manager.Department.DepartmentEdit" %>
 
 <!DOCTYPE html>
 

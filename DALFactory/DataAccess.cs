@@ -67,55 +67,8 @@ namespace JSOA.DALFactory
         //}
         #endregion
 
-        #region CreateSysManage
-        public static JSOA.IDAL.ISysManage CreateSysManage()
-        {
-            //方式1			
-            //return (Maticsoft.IDAL.ISysManage)Assembly.Load(AssemblyPath).CreateInstance(AssemblyPath+".SysManage");
-
-            //方式2 			
-            string classNamespace = AssemblyPath + ".SysManage";
-            object objType = CreateObject(AssemblyPath, classNamespace);
-            return (JSOA.IDAL.ISysManage)objType;
-        }
-        #endregion
-
-
-
-        /// <summary>
-        /// 创建Department数据层接口。
-        /// </summary>
-        //public static JSOA.IDAL.IDepartment CreateDepartment()
-        //{
-
-        //    string ClassNamespace = AssemblyPath + ".Department";
-        //    object objType = CreateObject(AssemblyPath, ClassNamespace);
-        //    return (JSOA.IDAL.IDepartment)objType;
-        //}
-
-
-        /// <summary>
-        /// 创建DeptStation数据层接口。
-        /// </summary>
-        //public static JSOA.IDAL.IDeptStation CreateDeptStation()
-        //{
-
-        //    string ClassNamespace = AssemblyPath + ".DeptStation";
-        //    object objType = CreateObject(AssemblyPath, ClassNamespace);
-        //    return (JSOA.IDAL.IDeptStation)objType;
-        //}
-
-
-        /// <summary>
-        /// 创建EmpDept数据层接口。
-        /// </summary>
-        //public static JSOA.IDAL.IEmpDept CreateEmpDept()
-        //{
-
-        //    string ClassNamespace = AssemblyPath + ".EmpDept";
-        //    object objType = CreateObject(AssemblyPath, ClassNamespace);
-        //    return (JSOA.IDAL.IEmpDept)objType;
-        //}
+       
+        
 
 
         /// <summary>
@@ -131,51 +84,15 @@ namespace JSOA.DALFactory
 
 
         /// <summary>
-        /// 创建Port_EmpStation数据层接口。
+        /// 创建Sys_Department数据层接口。
         /// </summary>
-        //public static JSOA.IDAL.IPort_EmpStation CreatePort_EmpStation()
-        //{
+        public static JSOA.IDAL.ISys_Department CreateSys_Department()
+        {
 
-        //    string ClassNamespace = AssemblyPath + ".Port_EmpStation";
-        //    object objType = CreateObject(AssemblyPath, ClassNamespace);
-        //    return (IDAL.IPort_EmpStation)objType;
-        //}
-
-
-        /// <summary>
-        /// 创建Station数据层接口。
-        /// </summary>
-        //public static IDAL.IStation CreateStation()
-        //{
-
-        //    string ClassNamespace = AssemblyPath + ".Station";
-        //    object objType = CreateObject(AssemblyPath, ClassNamespace);
-        //    return (IDAL.IStation)objType;
-        //}
-
-
-        /// <summary>
-        /// 创建Unit数据层接口。
-        /// </summary>
-        //public static IDAL.IUnit CreateUnit()
-        //{
-
-        //    string ClassNamespace = AssemblyPath + ".Unit";
-        //    object objType = CreateObject(AssemblyPath, ClassNamespace);
-        //    return (IDAL.IUnit)objType;
-        //}
-
-
-        /// <summary>
-        /// 创建WF_Emp数据层接口。
-        /// </summary>
-        //public static IDAL.IWF_Emp CreateWF_Emp()
-        //{
-
-        //    string ClassNamespace = AssemblyPath + ".WF_Emp";
-        //    object objType = CreateObject(AssemblyPath, ClassNamespace);
-        //    return (IDAL.IWF_Emp)objType;
-        //}
+            string ClassNamespace = AssemblyPath + ".Sys_Department";
+            object objType = CreateObject(AssemblyPath, ClassNamespace);
+            return (JSOA.IDAL.ISys_Department)objType;
+        }
 
     }
 }

@@ -6,7 +6,7 @@ using System.Text;
 using System.Security.Cryptography;
 
 
-namespace JSOA.DBUtility
+namespace JSOA.Common
 {
     /// <summary>
     /// DES加密/解密类。

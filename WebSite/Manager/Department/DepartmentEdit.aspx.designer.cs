@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace JSOA.WebSite.Manager
+namespace JSOA.WebSite.Manager.Department
 {
 
 
-    public partial class Department
+    public partial class DepartmentEdit
     {
 
         /// <summary>

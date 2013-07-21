@@ -76,7 +76,8 @@
     <Content Include="images\validate_bg.gif" />
     <Content Include="Manager\center.aspx" />
     <Content Include="Manager\Default.aspx" />
-    <Content Include="Manager\Department.aspx" />
+    <Content Include="Manager\Department\DepartmentEdit.aspx" />
+    <Content Include="Manager\Department\DepartmentList.aspx" />
     <Content Include="Manager\images\arrow_left.png" />
     <Content Include="Manager\images\btn_bg.gif" />
     <Content Include="Manager\images\default_user_avatar.gif" />
@@ -146,6 +147,7 @@
     <Content Include="Manager\images\upfile_bg.gif" />
     <Content Include="Manager\images\user_toolbar.gif" />
     <Content Include="Manager\js\function.js" />
+    <Content Include="Manager\ListPage.ascx" />
     <Content Include="Manager\Login.aspx" />
     <Content Include="Manager\manager_pwd.aspx" />
     <Content Include="scripts\calendar.js" />
@@ -377,12 +379,26 @@
     <Compile Include="Manager\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Manager\Department.aspx.cs">
-      <DependentUpon>Department.aspx</DependentUpon>
+    <Compile Include="Manager\Department\DepartmentEdit.aspx.cs">
+      <DependentUpon>DepartmentEdit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Manager\Department.aspx.designer.cs">
-      <DependentUpon>Department.aspx</DependentUpon>
+    <Compile Include="Manager\Department\DepartmentEdit.aspx.designer.cs">
+      <DependentUpon>DepartmentEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\Department\DepartmentList.aspx.cs">
+      <DependentUpon>DepartmentList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\Department\DepartmentList.aspx.designer.cs">
+      <DependentUpon>DepartmentList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\ListPage.ascx.cs">
+      <DependentUpon>ListPage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\ListPage.ascx.designer.cs">
+      <DependentUpon>ListPage.ascx</DependentUpon>
     </Compile>
     <Compile Include="Manager\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>

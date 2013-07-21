@@ -45,7 +45,10 @@
     <Compile Include="ConfigHelper.cs" />
     <Compile Include="ConstKeys.cs" />
     <Compile Include="DataCache.cs" />
+    <Compile Include="DESEncrypt.cs" />
     <Compile Include="Encrypt.cs" />
+    <Compile Include="OpRequest.cs" />
+    <Compile Include="PageList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils.cs" />
   </ItemGroup>

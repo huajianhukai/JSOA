@@ -41,7 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IEmployee.cs" />
-    <Compile Include="ISysManage.cs" />
+    <Compile Include="ISys_Department.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

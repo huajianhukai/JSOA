@@ -8,14 +8,14 @@ using JSOA.Model;
 using JSOA.Common;
 namespace JSOA.WebSite.Manager
 {
-    public partial class Default : ManagePage//System.Web.UI.Page//
+    public partial class Default : System.Web.UI.Page//
     {
         protected Employee admin_info;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
             {
-                admin_info = GetAdminInfo();
+               // admin_info = GetAdminInfo();
             }
         }
 

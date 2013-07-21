@@ -103,7 +103,7 @@
             <div position="top" class="header">
                 <div class="header_box">
                     <div class="header_right">
-                        <span><b><%=admin_info.Name %></b>您好，欢迎光临</span>
+                        <span><b></b>您好，欢迎光临</span>
                         <br />
                         <a href="javascript:f_addTab('home','管理中心','center.aspx')">管理中心</a> | <a target="_blank"
                             href="../Default.aspx">预览首页</a> |
@@ -135,7 +135,8 @@
                 </div>
                 <div title="组织机构" iconcss="menu-icon-member">
                     <ul class="nlist">
-                        <li><a href="javascript:f_addTab('user_list','部门管理','Department.aspx')">部门管理</a></li>
+                        
+                        <li><a href="javascript:f_addTab('user_list','部门管理','Department/DepartmentList.aspx')">部门管理</a></li>
                         <li><a href="javascript:f_addTab('user_list','会员信息管理','users/user_list.aspx')">岗位管理</a></li>
                         <li><a href="">人员管理</a></li>
 
