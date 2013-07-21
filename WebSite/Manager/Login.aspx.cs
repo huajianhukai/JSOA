@@ -54,7 +54,7 @@ namespace JSOA.WebSite.Manager
                 return;
             }
 
-            Employee modelemp = new Employee();
+            Model.Employee modelemp = new Model.Employee();
             BllEmployee bllemp=new BllEmployee ();
 
             modelemp = bllemp.GetModel(userNo);
@@ -80,6 +80,7 @@ namespace JSOA.WebSite.Manager
                     }
                     Utils.WriteCookie("AdminName", "jsoa", modelemp.Name);
                     Utils.WriteCookie("AdminPwd", "jsoa", modelemp.Pass);
+                    Utils.WriteCookie("AdminNo", "jsoa", modelemp.No);
                     Response.Redirect("Default.aspx");
                     return;
 

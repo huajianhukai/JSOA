@@ -74,7 +74,9 @@
     <Content Include="images\pay_delivery.gif" />
     <Content Include="images\pay_tenpay.gif" />
     <Content Include="images\validate_bg.gif" />
+    <Content Include="Manager\center.aspx" />
     <Content Include="Manager\Default.aspx" />
+    <Content Include="Manager\Department.aspx" />
     <Content Include="Manager\images\arrow_left.png" />
     <Content Include="Manager\images\btn_bg.gif" />
     <Content Include="Manager\images\default_user_avatar.gif" />
@@ -145,6 +147,7 @@
     <Content Include="Manager\images\user_toolbar.gif" />
     <Content Include="Manager\js\function.js" />
     <Content Include="Manager\Login.aspx" />
+    <Content Include="Manager\manager_pwd.aspx" />
     <Content Include="scripts\calendar.js" />
     <Content Include="scripts\jquery\jquery-1.3.2.min.js" />
     <Content Include="scripts\jquery\jquery.form.js" />
@@ -357,6 +360,16 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="ManagePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\center.aspx.cs">
+      <DependentUpon>center.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\center.aspx.designer.cs">
+      <DependentUpon>center.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Manager\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -364,12 +377,26 @@
     <Compile Include="Manager\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Manager\Department.aspx.cs">
+      <DependentUpon>Department.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\Department.aspx.designer.cs">
+      <DependentUpon>Department.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Manager\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Manager\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\manager_pwd.aspx.cs">
+      <DependentUpon>manager_pwd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\manager_pwd.aspx.designer.cs">
+      <DependentUpon>manager_pwd.aspx</DependentUpon>
     </Compile>
     <Compile Include="PageBase.cs">
       <SubType>ASPXCodeBehind</SubType>

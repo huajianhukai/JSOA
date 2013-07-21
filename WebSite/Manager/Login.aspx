@@ -18,7 +18,7 @@
         $(function () {
             //检测IE
             if ($.browser.msie && $.browser.version == "6.0") {
-                window.location.href = 'ie6update.html';
+                window.location.href = 'update.html';
             }
             $('#txtUserName').focus();
             $("#form1").validate({

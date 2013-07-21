@@ -25,6 +25,19 @@ namespace JSOA.Common
         }
 
         /// <summary>
+        /// 读cookie值
+        /// </summary>
+        /// <param name="strName">名称</param>
+        /// <returns>cookie值</returns>
+        public static string GetCookie(string strName, string key)
+        {
+            if (HttpContext.Current.Request.Cookies != null && HttpContext.Current.Request.Cookies[strName] != null && HttpContext.Current.Request.Cookies[strName][key] != null)
+                return UrlDecode(HttpContext.Current.Request.Cookies[strName][key].ToString());
+
+            return "";
+        }
+
+        /// <summary>
         /// 写cookie值
         /// </summary>
         /// <param name="strName">名称</param>
