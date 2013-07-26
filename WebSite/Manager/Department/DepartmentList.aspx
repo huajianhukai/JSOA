@@ -48,6 +48,14 @@
             </HeaderTemplate>
             <ItemTemplate>
                 <tr>
+                    <td   style="align-content:center">
+                        <asp:CheckBox ID="chkId" CssClass="checkall" runat="server" /><asp:HiddenField ID="hidId" Value='<%#Eval("NO")%>' runat="server" />
+                    </td>
+                    <td><%#Eval("No")%></td>
+                    <td><a href="DepartmentEdit.aspx?action=Edit&No=<%#Eval("No")%>"><%#Eval("Name")%></a></td>
+                    <td><%#Eval("FName")%></td>
+                    <td><%#Eval("Remarks")%></td>
+                    <td style="align-content:center"><a href="DepartmentEdit.aspx?action=Edit&No=<%#Eval("No")%>"><%#Eval("Name")%>修改</a></td>
                 </tr>
             </ItemTemplate>
             <FooterTemplate>
@@ -57,5 +65,9 @@
         <uc1:ListPage runat="server" ID="ListPage" />
 
     </form>
+    <script type="text/javascript">
+
+
+    </script>
 </body>
 </html>

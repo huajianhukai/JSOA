@@ -671,6 +671,25 @@ namespace JSOA.Common
         }
         #endregion
 
+        /// <summary>
+        /// 过滤非法字符
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public static string FiltRiskChar(string str) 
+        {
+            string s = "";
+
+            s = str.Replace("'", " ");
+            s = s.Replace(";", " ");
+            s = s.Replace("1=1", " ");
+            s = s.Replace("|", " ");
+            s = s.Replace("<", " ");
+            s = s.Replace(">", " ");
+
+            return s;
+        }
+
         #region 检查是否为IP地址
         /// <summary>
         /// 是否为ip

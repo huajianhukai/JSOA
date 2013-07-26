@@ -18,13 +18,15 @@ namespace JSOA.Common
         /// <param name="tblName">表名称</param>
         /// <param name="fldName">显示字段</param>
         /// <param name="fldSort">排序</param>
+        /// <param name="Sort">排序0降序，1升序</param>
         /// <param name="strwhere">条件</param>
         /// <param name="ID">主键</param>
+        /// <param name="Distinct">查找的内容是否添加Distinct</param>
         /// <param name="nIndex">页</param>
         /// <param name="CurrentPageCount">每页显示的记录个数</param>
         /// <param name="Count">总数</param>
         /// <returns></returns>
-        public static  DataTable GetPageList(string tblName, string fldName, string fldSort, string strwhere, string ID, int nIndex, int CurrentPageCount, ref int Count)
+       public static DataTable GetPageList(string tblName, string fldName, string fldSort, int Sort, string strwhere, string ID, int Distinct, int nIndex, int CurrentPageCount, ref int Count)
         {
             string connectionString = ConnectionString;
             SqlConnection conn = new SqlConnection(connectionString);
@@ -47,14 +49,14 @@ namespace JSOA.Common
             cmd.Parameters.Add("@Counts", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.Output;//返回符合条件的总记录数
             // ----排序字段列表或条件
             cmd.Parameters.Add("@fldSort", System.Data.SqlDbType.NVarChar).Value = fldSort;
-            //  ----排序方法，0为升序，1为降序(如果是多字段排列Sort指代最后一个排序字段的排列顺序(最后一个排序字段不加排序标记)--程序传参如：' SortA Asc,SortB Desc,SortC ')
-            cmd.Parameters.Add("@Sort", System.Data.SqlDbType.Bit).Value = 0;
+            //  ----排序方法，1为升序，0为降序(如果是多字段排列Sort指代最后一个排序字段的排列顺序(最后一个排序字段不加排序标记)--程序传参如：' SortA Asc,SortB Desc,SortC ')
+            cmd.Parameters.Add("@Sort", System.Data.SqlDbType.Bit).Value = Sort;
             // ----查询条件,不需where
             cmd.Parameters.Add("@strCondition", System.Data.SqlDbType.NVarChar).Value = strwhere;
             // ----主表的主键
             cmd.Parameters.Add("@ID", System.Data.SqlDbType.NVarChar).Value = ID;
             //----是否添加查询字段的 DISTINCT 默认0不添加/1添加
-            cmd.Parameters.Add("@Dist", System.Data.SqlDbType.Bit).Value = 0;
+            cmd.Parameters.Add("@Dist", System.Data.SqlDbType.Bit).Value = Distinct;
 
             conn.Open();
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
@@ -79,7 +81,7 @@ namespace JSOA.Common
                 string ConStringEncrypt = ConfigurationManager.AppSettings["ConStringEncrypt"];
                 if (ConStringEncrypt == "true")
                 {
-                    _connectionString = DESEncrypt.Decrypt(_connectionString);
+                    _connectionString = Encrypt.Decrypt(_connectionString);
                 }
                 return _connectionString;
             }

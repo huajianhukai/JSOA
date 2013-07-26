@@ -12,10 +12,12 @@ using System.Data.SqlClient;
 
 using JSOA.Model;
 using JSOA.BLL;
+using JSOA.Common;
 namespace JSOA.WebSite.Manager.Department
 {
     public partial class DepartmentList : System.Web.UI.Page
     {
+        string strWhere = string.Empty;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!this.Page.IsPostBack)
@@ -27,7 +29,13 @@ namespace JSOA.WebSite.Manager.Department
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
+            if (!String.IsNullOrEmpty(txtKeywords.Text.Trim()))
+            {
 
+                strWhere = "and f.Name like '%" + Common.Utils.FiltRiskChar(txtKeywords.Text.Trim()) + "%'";
+                BindData();
+            }
+           
         }
 
         protected void btnDelete_Click(object sender, EventArgs e)
@@ -41,23 +49,26 @@ namespace JSOA.WebSite.Manager.Department
             int nIndex = this.ListPage.PageIndex;     //第几个页面
             int currentPageCount = this.ListPage.PageSize;      //页面的显示容量大小
 
-            DataTable dt = Common.PageList.GetPageList("[Sys_Department]",
-                "[Sys_Department].No,[Sys_Department].Name,[Sys_Department].ParentNo,[Sys_Department].Remarks",
+
+            DataTable dt = Common.PageList.GetPageList("Sys_Department  as d join Sys_Department  as f on d.ParentNo =f.No",
+                "d.No,d.Name,f.Name As FName,d.Remarks",
                 "No",
-                "",
-                "No",
+                1,
+                strWhere,
+                "d.No",
+                0,
                  nIndex,
                  currentPageCount,
-                 ref this.ListPage.TotalPageTemp
-                );
+                 ref this.ListPage.TotalPageTemp);
+             
 
-            int n = dt.Rows.Count;
-            for (int i = 0; i < n; i++)
+            if (dt.Rows.Count > 0)
             {
-                Response.Write(dt.Rows[0]["No"].ToString());
-                Response.Write("<br/>");
+                int n = dt.Rows.Count;
             }
 
+            rptList.DataSource = dt;
+            rptList.DataBind();
         }
     }
 }

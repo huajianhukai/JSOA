@@ -43,7 +43,22 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Ionic.Zip">
+      <HintPath>..\packages\NPOI.1.2.5\lib\net40\Ionic.Zip.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="NPOI">
+      <HintPath>..\packages\NPOI.1.2.5\lib\net40\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML">
+      <HintPath>..\packages\NPOI.1.2.5\lib\net40\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net">
+      <HintPath>..\packages\NPOI.1.2.5\lib\net40\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats">
+      <HintPath>..\packages\NPOI.1.2.5\lib\net40\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
@@ -307,6 +322,7 @@
     <Content Include="scripts\ui\skins\Aqua\images\tree\tree-status.gif" />
     <Content Include="scripts\ui\skins\Aqua\images\tree\tree.gif" />
     <Content Include="scripts\ui\skins\Aqua\images\tree\tree.png" />
+    <Content Include="Test\ExcelOperation.aspx" />
     <Content Include="Test\ListPage.ascx" />
     <Content Include="Test\WebForm1.aspx" />
     <Content Include="Test\WebForm2.aspx" />
@@ -418,6 +434,13 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Test\ExcelOperation.aspx.cs">
+      <DependentUpon>ExcelOperation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test\ExcelOperation.aspx.designer.cs">
+      <DependentUpon>ExcelOperation.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Test\ListPage.ascx.cs">
       <DependentUpon>ListPage.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -483,6 +506,9 @@
       <Project>{5A6D72D5-E191-4C15-9FF5-9AA2EAE61E62}</Project>
       <Name>SQLServerDAL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
