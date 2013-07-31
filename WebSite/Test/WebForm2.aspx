@@ -5,13 +5,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <script type="text/javascript">
+        
+       
+    </script>
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
-     this is a test
-     add an other message
-    </div>
+    <asp:button ID="Button1" runat="server" text="Button" OnClick="Button1_Click" />
     </form>
 </body>
 </html>
+

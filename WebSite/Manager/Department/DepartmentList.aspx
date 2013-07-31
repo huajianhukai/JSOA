@@ -37,25 +37,25 @@
             <HeaderTemplate>
                 <table width="100%" border="0" cellspacing="0" cellpadding="0" class="msgtable">
                     <tr>
-                        <th width="6%">选择</th>
-                        <th align="left">部门编号</th>
-                        <th width="12%" align="left">部门名称</th>
-                        <th width="12%" align="left">上级部门编号</th>
+                        <th width="6%" align="center">选择</th>
+                        <th align="center">部门编号</th>
+                        <th width="20%" align="center">部门名称</th>
+                        <th width="20%" align="center">上级部门名称</th>
 
-                        <th width="16%" align="left">备注</th>
-                        <th width="6%">操作</th>
+                        <th width="40%" align="center">备注</th>
+                        <th width="6%" align="center">操作</th>
                     </tr>
             </HeaderTemplate>
             <ItemTemplate>
                 <tr>
-                    <td   style="align-content:center">
+                    <td align="center">
                         <asp:CheckBox ID="chkId" CssClass="checkall" runat="server" /><asp:HiddenField ID="hidId" Value='<%#Eval("NO")%>' runat="server" />
                     </td>
-                    <td><%#Eval("No")%></td>
-                    <td><a href="DepartmentEdit.aspx?action=Edit&No=<%#Eval("No")%>"><%#Eval("Name")%></a></td>
-                    <td><%#Eval("FName")%></td>
-                    <td><%#Eval("Remarks")%></td>
-                    <td style="align-content:center"><a href="DepartmentEdit.aspx?action=Edit&No=<%#Eval("No")%>"><%#Eval("Name")%>修改</a></td>
+                    <td align="center"><%#Eval("No")%></td>
+                    <td align="center"><a href="DepartmentEdit.aspx?action=Edit&No=<%#Eval("No")%>"><%#Eval("Name")%></a></td>
+                    <td align="center"><%#Eval("FName")%></td>
+                    <td align="center"><%#Eval("Remarks")%></td>
+                    <td align="center"><a href="DepartmentEdit.aspx?action=Edit&No=<%#Eval("No")%>">修改</a></td>
                 </tr>
             </ItemTemplate>
             <FooterTemplate>

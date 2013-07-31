@@ -15,8 +15,8 @@ namespace JSOA.WebSite
 
         public ManagePage()
         {
-            this.Load += new EventHandler(ManagePage_Load);
-           // siteConfig = new BLL.siteconfig().loadConfig(Utils.GetXmlMapPath("Configpath"));//Configpath
+            //this.Load += new EventHandler(ManagePage_Load);
+            //siteConfig = new BLL.siteconfig().loadConfig(Utils.GetXmlMapPath("Configpath"));//Configpath
         }
 
         private void ManagePage_Load(object sender, EventArgs e)

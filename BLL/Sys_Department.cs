@@ -53,7 +53,7 @@ namespace JSOA.BLL
             return dal.Delete(No);
         }
         /// <summary>
-        /// 删除一条数据
+        ///批量删除数据
         /// </summary>
         public bool DeleteList(string Nolist)
         {

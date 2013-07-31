@@ -13,7 +13,7 @@ namespace JSOA.SQLServerDAL
     /// <summary>
     /// 数据访问类:Sys_Department
     /// </summary>
-    public partial class Sys_Department
+    public partial class Sys_Department:ISys_Department
     {
         public Sys_Department()
         { }
