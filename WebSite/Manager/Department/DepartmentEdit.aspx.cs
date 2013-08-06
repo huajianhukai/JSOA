@@ -1,28 +1,18 @@
 ﻿using System;
-using System.Collections;
-using System.Configuration;
 using System.Data;
-using System.Web;
-using System.Web.Security;
 using System.Web.UI;
-using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
-using System.Web.UI.WebControls.WebParts;
-using System.Data.SqlClient;
-
-using JSOA.Model;
-using JSOA.BLL;
-using JSOA.Common;
 
 namespace JSOA.WebSite.Manager.Department
 {
-    public partial class DepartmentEdit : JSOA.WebSite.ManagePage 
+    public partial class DepartmentEdit : JSOA.WebSite.ManagePage
     {
         protected string strInformation = "添加部门信息";
 
         public string Action
         {
-            get {
+            get
+            {
                 if (Request.QueryString["action"] != null)
                 {
                     return Request.QueryString["action"];
@@ -49,32 +39,36 @@ namespace JSOA.WebSite.Manager.Department
             }
         }
 
-       
-        protected void Page_Load(object sender, EventArgs e)
+        protected void Add()
         {
-            if (!Page.IsPostBack)
+            try
             {
-                BindDepartmentList();
-                if (Action.ToLower() == "add")
-                {
-                    strInformation = "添加部门信息";
+                BLL.Sys_Department bll = new BLL.Sys_Department();
+                Model.Sys_Department model = new Model.Sys_Department();
+                model.ParentNo = ddlFatherDepartment.SelectedItem.Value;
+                model.No = txtDeptNo.Text.ToString().Trim();
+                model.Name = txtDeptName.Text.ToString().Trim();
+                model.Remarks = txtRemarks.Text.ToString();
+                bll.Add(model);
 
-
-                }
-                else
-                {
-                    strInformation = "修改部门信息";
-                    GetDepartment();
-
-                }
+                JscriptMsg("添加部门成功啦！", "DepartmentList.aspx", "Success");
             }
-           
+            catch (Exception ex)
+            {
+                JscriptMsg(ex.Message + "添加部门失败！", "", "Error");
+            }
         }
 
-        protected void btnSubmit_Click(object sender, EventArgs e)
+        protected void AddOrEdit()
         {
-            AddOrEdit();
-
+            if (Action.ToLower() == "add")
+            {
+                Add();
+            }
+            else
+            {
+                Edit();
+            }
         }
 
         /// <summary>
@@ -83,15 +77,38 @@ namespace JSOA.WebSite.Manager.Department
         protected void BindDepartmentList()
         {
             BLL.Sys_Department sysDt = new BLL.Sys_Department();
-            DataTable  dtList = sysDt.GetAllList().Tables[0];
+            DataTable dtList = sysDt.GetAllList().Tables[0];
 
             for (int i = 0; i < dtList.Rows.Count; i++)
             {
                 ddlFatherDepartment.Items.Add(new ListItem(dtList.Rows[i]["Name"].ToString() + "(" + dtList.Rows[i]["No"].ToString() + ")", dtList.Rows[i]["No"].ToString()));
             }
+        }
 
-            
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+            AddOrEdit();
+        }
 
+        protected void Edit()
+        {
+            try
+            {
+                BLL.Sys_Department bll = new BLL.Sys_Department();
+                Model.Sys_Department model = new Model.Sys_Department();
+                model.ParentNo = ddlFatherDepartment.SelectedItem.Value;
+                model.No = txtDeptNo.Text.ToString().Trim();
+                model.Name = txtDeptName.Text.ToString().Trim();
+                model.Remarks = txtRemarks.Text.ToString();
+
+                bll.Update(model);
+
+                JscriptMsg("修改部门成功啦！", "DepartmentList.aspx", "Success");
+            }
+            catch (Exception ex)
+            {
+                JscriptMsg(ex.Message + "修改部门失败！", "", "Error");
+            }
         }
 
         protected void GetDepartment()
@@ -112,70 +129,21 @@ namespace JSOA.WebSite.Manager.Department
             }
         }
 
-        protected void AddOrEdit()
+        protected void Page_Load(object sender, EventArgs e)
         {
-
-            if (Action.ToLower() == "add")
+            if (!Page.IsPostBack)
             {
-                Add();
+                BindDepartmentList();
+                if (Action.ToLower() == "add")
+                {
+                    strInformation = "添加部门信息";
+                }
+                else
+                {
+                    strInformation = "修改部门信息";
+                    GetDepartment();
+                }
             }
-            else
-            {
-                Edit();
-            }
-
         }
-
-
-        protected void Add()
-        {
-            try
-            {
-                BLL.Sys_Department bll = new BLL.Sys_Department();
-                Model.Sys_Department model = new Model.Sys_Department();
-                model.ParentNo = ddlFatherDepartment.SelectedItem.Value;
-                model.No = txtDeptNo.Text.ToString().Trim();
-                model.Name = txtDeptName.Text.ToString().Trim();
-                model.Remarks = txtRemarks.Text.ToString();
-
-                bll.Add(model);
-
-                JscriptMsg("添加部门成功啦！", "DepartmentList.aspx", "Success");
-            }
-            catch (Exception ex )
-            {
-
-                JscriptMsg(ex.Message + "添加部门失败！", "", "Error");
-            }
-
-
-        }
-
-        protected void Edit()
-        {
-            try
-            {
-                BLL.Sys_Department bll = new BLL.Sys_Department();
-                Model.Sys_Department model = new Model.Sys_Department();
-                model.ParentNo = ddlFatherDepartment.SelectedItem.Value;
-                model.No = txtDeptNo.Text.ToString().Trim();
-                model.Name = txtDeptName.Text.ToString().Trim();
-                model.Remarks = txtRemarks.Text.ToString();
-
-                bll.Update(model);
-           
-
-                JscriptMsg("修改部门成功啦！", "DepartmentList.aspx", "Success");
-            }
-            catch (Exception ex )
-            {
-
-                JscriptMsg(ex.Message + "修改部门失败！", "", "Error");
-            }                                                                   
-
-        }
-
-
-    
     }
 }

@@ -15,7 +15,7 @@ namespace JSOA.WebSite.Test
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Response.Write("nihao1<br/>");
+           
         }
 
         protected void Button1_Click(object sender, EventArgs e)
